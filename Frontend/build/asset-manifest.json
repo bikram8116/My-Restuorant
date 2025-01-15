@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/signup/static/css/main.6285457c.css",
+    "main.js": "/signup/static/js/main.6209e120.js",
+    "static/js/787.091bb736.chunk.js": "/signup/static/js/787.091bb736.chunk.js",
+    "static/media/biryani.png": "/signup/static/media/biryani.302f559b076a476ad924.png",
+    "static/media/lolipop.png": "/signup/static/media/lolipop.a319b6a57f4496de792e.png",
+    "static/media/mutton.png": "/signup/static/media/mutton.534b0210df2c847a4cef.png",
+    "static/media/chowmin.png": "/signup/static/media/chowmin.c311a7e3e8ad26523bbe.png",
+    "static/media/chickenHandi.png": "/signup/static/media/chickenHandi.774dd853a1ca890930f9.png",
+    "static/media/chicken.png": "/signup/static/media/chicken.7ce11894387b50ee4253.png",
+    "static/media/c65.png": "/signup/static/media/c65.10df2e737f40aafd422a.png",
+    "static/media/mughlai.png": "/signup/static/media/mughlai.d218aaffd4b309cd8d65.png",
+    "static/media/masala.jpg": "/signup/static/media/masala.f4dd64f4906d42ddcbdb.jpg",
+    "static/media/butterChicken.png": "/signup/static/media/butterChicken.c50b57dbd3fef43f156f.png",
+    "static/media/momo.png": "/signup/static/media/momo.7349db5f9b255fd5ca20.png",
+    "static/media/chickenTandoor.png": "/signup/static/media/chickenTandoor.1b533a17b3f623b14bfe.png",
+    "static/media/fish.webp": "/signup/static/media/fish.1eebdb59ceb337f47634.webp",
+    "static/media/banner.jpeg": "/signup/static/media/banner.05892fe97cce26a5d9e5.jpeg",
+    "static/media/chhola.jpg": "/signup/static/media/chhola.a1458ef1370699c23212.jpg",
+    "static/media/logo.svg": "/signup/static/media/logo.6fc22e5fbdec6b9338921613bddec0dd.svg",
+    "static/media/paneer.jpg": "/signup/static/media/paneer.f04d2c563fe596463e47.jpg",
+    "static/media/idli.jpg": "/signup/static/media/idli.dc2d98fda6c7a903c64b.jpg",
+    "static/media/gujrati.jpeg": "/signup/static/media/gujrati.77bd2d3baa11e6cf3dcd.jpeg",
+    "static/media/dosa.jpg": "/signup/static/media/dosa.5c938f456ea86779ba13.jpg",
+    "index.html": "/signup/index.html",
+    "main.6285457c.css.map": "/signup/static/css/main.6285457c.css.map",
+    "main.6209e120.js.map": "/signup/static/js/main.6209e120.js.map",
+    "787.091bb736.chunk.js.map": "/signup/static/js/787.091bb736.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6285457c.css",
+    "static/js/main.6209e120.js"
+  ]
+}
