@@ -14,7 +14,12 @@ import {
   DialogTitle,
   DialogContent,
   DialogActions,
-  Button
+  Button,
+  Grid,
+  Card,
+  CardMedia,
+  CardContent,
+  CardActions,
 } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Logo from '../../images/logo.svg';
@@ -22,6 +27,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import '../../styles/HeaderStyles.css';
+import { MenuList } from '../../data/data';
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -63,6 +69,15 @@ const Header = () => {
 
   const handleDialogClose = () => {
     setDialogOpen(false);
+  };
+
+  // Calculate the total price
+  const calculateTotalPrice = () => {
+    const total = Object.entries(quantities).reduce((acc, [item, quantity]) => {
+      const menuItem = MenuList.find((menu) => menu.name === item); // Find the item price
+      return acc + (menuItem ? menuItem.price * quantity : 0);
+    }, 0);
+    return total.toFixed(2); // Round to 2 decimal places
   };
 
   const drawer = (
@@ -210,21 +225,52 @@ const Header = () => {
         {/* Dialog for cart */}
         <Dialog open={dialogOpen} onClose={handleDialogClose}>
           <DialogTitle>Shopping Cart</DialogTitle>
-          <DialogContent>
+          <DialogContent dividers>
             {quantities && Object.keys(quantities).length > 0 ? (
-              <div>
-                {Object.entries(quantities).map(([item, quantity]) => (
-                  <Typography key={item}>
-                    {item}: {quantity}
-                  </Typography>
-                ))}
-              </div>
+              <Grid container spacing={2}>
+                {Object.entries(quantities).map(([item, quantity]) => {
+                  const menuItem = MenuList.find((menu) => menu.name === item); // Find the item
+                  return menuItem ? (
+                    <Grid item xs={12} key={item}>
+                      <Card>
+                        <CardMedia
+                          component="img"
+                          height="140"
+                          image={menuItem.image}
+                          alt={menuItem.name}
+                        />
+                        <CardContent>
+                          <Typography gutterBottom variant="h5" component="div">
+                            {menuItem.name}
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            Price: ₹{menuItem.price}
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            Quantity: {quantity}
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                  ) : null;
+                })}
+                <Divider sx={{ my: 2 }} />
+                <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <Typography variant="h6">Total:</Typography>
+                  <Typography variant="h6">₹ {calculateTotalPrice()}</Typography>
+                </Box>
+              </Grid>
             ) : (
               <Typography>Your cart is currently empty. Add items to see them here.</Typography>
             )}
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleDialogClose}>Close</Button>
+            <Button onClick={handleDialogClose} variant="contained" color="primary">
+              Close
+            </Button>
+            <Button onClick={() => navigate('/checkout')} variant="outlined" color="secondary">
+              Checkout
+            </Button>
           </DialogActions>
         </Dialog>
       </Box>
